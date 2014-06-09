@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>View questions by matching keyword</h1>
-	<form id="viewQuestionKeyword" name="viewQuestionKeyword" method="post" action="#">
+	<form id="viewQuestionKeyword" name="viewQuestionKeyword" method="post" action="viewQuestionKeywordQuery.jsp">
 		Keyword: <input type="text" id="keyword" name="keyword"><br>
 		<input type="submit" value="View">
 		<input type="button" value="Back" onclick="javascript:window.location='http://localhost:9000/viewQuestions.jsp'">

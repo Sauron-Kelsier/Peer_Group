@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>View question subject-wise</h1>
-	<form id="viewQuestionSubject" name="viewQuestionSubject" method="post" action="#">
+	<form id="viewQuestionSubject" name="viewQuestionSubject" method="post" action="viewQuestionSubjectQuery.jsp">
 		Subject: <input type="text" id="subject" name="subject"><br>
 		<input type="submit" value="View">
 		<input type="button" value="Back" onclick="javascript:window.location='http://localhost:9000/viewQuestions.jsp'">

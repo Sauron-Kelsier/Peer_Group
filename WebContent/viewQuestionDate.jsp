@@ -8,8 +8,8 @@
 </head>
 <body>
 	<h1>View questions by date</h1>
-	<form id="viewQuestionDate" name="viewQuestionDate" method="post" action="#">
-		Date: <input type="date" id="date" name="date"><br>
+	<form id="viewQuestionDate" name="viewQuestionDate" method="post" action="viewQuestionDateQuery.jsp">
+		Date: <input type="text" id="date" name="date" placeholder="yyyy-mm-dd"><br>
 		<input type="submit" value="View Questions">
 		<input type="button" value="Back" onclick="javascript:window.location='http://localhost:9000/viewQuestions.jsp'">
 	</form>

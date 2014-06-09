@@ -11,7 +11,7 @@
 	
 	<%-- send the data to the file that will store the record in the student table --%>
 	<%-- and then redirect back to the configureStudent.jsp page --%>
-	<form id="addStudent" name="addStudent" method="post" action="#">
+	<form id="addStudent" name="addStudent" method="post" action="addStudentQuery.jsp">
 	Roll Number: <input type="text" id="rollNumber" name="rollNumber"><br>
 	Name: <input type="text" id="name" name="name">	<br>
 	<input type="submit" value="Add">

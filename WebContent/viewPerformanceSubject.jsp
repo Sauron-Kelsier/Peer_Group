@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>View all performances of a subject</h1>
-	<form id="viewSubject" name="viewSubject" method="post" action="#">
+	<form id="viewSubject" name="viewSubject" method="post" action="viewPerformanceSubjectQuery.jsp">
 		Subject: <input type="text" id="subject" name="subject"><br>
 		<input type="submit" value="View">
 		<input type="button" value="Back" onclick="javascript:window.location='http://localhost:9000/viewPerformance.jsp'">

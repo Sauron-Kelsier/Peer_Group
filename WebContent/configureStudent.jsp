@@ -12,7 +12,7 @@
 	<input type="button" value="View details of a student" onclick="javascript:window.location='http://localhost:9000/viewOneStudent.jsp'">
 	
 	<%-- Redirect to a jsp file that will query all the records and display them --%>
-	<input type="button" value="View details of all students">
+	<input type="button" value="View details of all students" onclick="javascript:window.location='http://localhost:9000/viewAllStudentQuery.jsp'" >
 	<p id="bottom" align="right">
 	<input type="button" value="Back" onclick="javascript:window.location='http://localhost:9000/teacherOptions.jsp'">
 	</p>

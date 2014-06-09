@@ -11,15 +11,18 @@
 <%--
 
 <%@ page import="test.Hello" %>
- <jsp:useBean id="link" scope="application" class = "test.Hello" />
+ 
 <% Hello obj=new Hello(); %>
 
-
 --%>
-	<form id="loginForm" name="loginForm" method="post" action="teacherOptions.jsp">
+
+	<form id="loginForm" name="loginForm" method="post" action="loginQuery.jsp">
 		User ID: <input type="text" id="userId" name="userId"><br> 
 		Password: <input type="password" name="userPassword"><br>  
 		<input type="submit" name="submit" value="Submit">
+		<p id="bottom" align="right">
+		<input type="button" value="Exit">
+		</p>
 	
 	</form>
 </body>

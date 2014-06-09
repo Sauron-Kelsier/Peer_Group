@@ -8,9 +8,9 @@
 </head>
 <body>
 	<h1>View Performance</h1>
-	<input type="button" value="Show all the performances roll number wise"><br>
-	<input type="button" value="Show all the performances date wise"><br>
-	<input type="button" value="Show all the performances subject wise"><br>
+	<input type="button" value="Show all the performances roll number wise" onclick="javascript:window.location='http://localhost:9000/viewAllPerformanceRollQuery.jsp'"><br>
+	<input type="button" value="Show all the performances date wise" onclick="javascript:window.location='http://localhost:9000/viewAllPerformanceDateQuery.jsp'"><br>
+	<input type="button" value="Show all the performances subject wise" onclick="javascript:window.location='http://localhost:9000/viewAllPerformanceSubjectQuery.jsp'"><br>
 	<input type="button" value="Show all the performances of an individual" onclick="javascript:window.location='http://localhost:9000/viewPerformanceIndividual.jsp'"><br>
 	<input type="button" value="Show all the performances of a date" onclick="javascript:window.location='http://localhost:9000/viewPerformanceDate.jsp'"><br>
 	<input type="button" value="Show all the performances of a subject" onclick="javascript:window.location='http://localhost:9000/viewPerformanceSubject.jsp'"><br>

@@ -8,8 +8,8 @@
 </head>
 <body>
 	<h1>View all performances on a particular date</h1>
-	<form id="viewDate" name="viewDate" method="post" action="#">
- 		Date: <input type="date" name="date"><br>
+	<form id="viewDate" name="viewDate" method="post" action="viewPerformanceDateQuery.jsp">
+ 		Date: <input type="text" name="date" placeholder="yyyy-mm-dd"><br>
  		<input type="submit" value="View">
 		<input type="button" value="Back" onclick="javascript:window.location='http://localhost:9000/viewPerformance.jsp'">
 	</form>
