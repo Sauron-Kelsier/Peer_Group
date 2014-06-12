@@ -195,10 +195,11 @@ public class Hello
 	
 	// method that displays all the performances of a particular student
 	// the roll number of the student goes into the method as the parameter
+	// records are ordered by date
 	public ResultSet viewPerformanceRoll(int roll) throws SQLException
 	{
 		Statement start=(Statement)databaseConnection.createStatement();
-        String query=new String("SELECT * FROM student_report WHERE roll_number="+roll+" ORDER BY date");
+        String query=new String("SELECT * FROM student_report WHERE roll_number="+roll+" ORDER BY date DESC");
         ResultSet res=(ResultSet)start.executeQuery(query);
         
         return res;		
@@ -220,6 +221,7 @@ public class Hello
 	
 	// method returns all the performances on a particular date
 	// it takes in the date as the parameter and queries the records that match the date
+	// records displayed according to the subject
 	public ResultSet viewPerformanceDate(String date) throws SQLException
 	{
 		Statement start=(Statement)databaseConnection.createStatement();

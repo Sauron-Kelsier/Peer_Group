@@ -12,7 +12,7 @@
 	<input type="button" value="Start a quiz" onclick="javascript:window.location='http://localhost:9000/startQuiz.jsp'"><br>
 	<input type="button" value="View performance" onclick="javascript:window.location='http://localhost:9000/viewPerformance.jsp'"><br>
 	<input type="button" value="View questions" onclick="javascript:window.location='http://localhost:9000/viewQuestions.jsp'"><br>
-	<input type="button" value="Upload a document"><br>
+	<input type="button" value="Upload a document" onclick="javascript:window.location='http://localhost:9000/fileUpload.jsp'"><br>
 	<p id="bottom" align="right">
 	<input type="button" value="Logout" onclick="javascript:window.location='http://localhost:9000/login.jsp'">
 	</p>

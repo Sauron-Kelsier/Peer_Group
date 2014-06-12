@@ -11,6 +11,7 @@
 	<input type="button" value="Search a question by keyword" onclick="javascript:window.location='http://localhost:9000/viewQuestionKeyword.jsp'"><br>
 	<input type="button" value="Search a question by date" onclick="javascript:window.location='http://localhost:9000/viewQuestionDate.jsp'"><br>
 	<input type="button" value="Search a question by subject" onclick="javascript:window.location='http://localhost:9000/viewQuestionSubject.jsp'"><br>
+
 	<p id="bottom" align="right">
 	<input type="button" value="Back" onclick="javascript:window.location='http://localhost:9000/teacherOptions.jsp'">
 </body>
