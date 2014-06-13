@@ -7,6 +7,7 @@ import com.mysql.jdbc.ResultSet;
 import com.mysql.jdbc.Statement;
 
 import java.sql.SQLException;
+import java.util.Map;
 
 public class Hello 
 {	
@@ -22,15 +23,7 @@ public class Hello
 			databaseConnection = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","database");
 			System.out.println("Connection established! Congratulations!");
 			
-			Statement start=(Statement)databaseConnection.createStatement();
-            String query=new String("SELECT * FROM teacher");
 
-            ResultSet res=(ResultSet) start.executeQuery(query);
-            if(res.next())
-            {
-            	System.out.println("Hahahaha!!!");
-            }
-						
 		}
 		catch (SQLException e) 
 		{
@@ -40,7 +33,9 @@ public class Hello
 		{
 			System.out.println("Lost not found Exception");
 		}
+		
 	}
+	
 	
 	
 	
