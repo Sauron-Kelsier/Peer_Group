@@ -17,29 +17,39 @@
 --%>
 
 
-<%@ page import="test.Hello" %>
+<%@ page import="test.Server" %>
 
 <%	
-	Hello obj=new Hello();
+	Server obj=new Server();
 //importing the class that establishes connection with the database (Hello)
-// taking the parameters (roll number, name, password) for inserting into the database
-	String id=new String(request.getParameter("rollNumber"));
+// taking the parameters (roll number, name, standard) for inserting into the database
+	String rollNumber=new String(request.getParameter("rollNumber"));
 	String name=new String(request.getParameter("name"));
+	String standard=new String((request.getParameter("standard")));
+
 	try
 	{
-		Integer id1=Integer.parseInt(id);
 		
-// password is generated automatically by concatenating name and roll number
-// marks is 0, by default
-		String pass=new String(name+id);
+// password is generated automatically by concatenating 1st word of the name and roll number
+// questions attempted and correct answeres are 0, by default
+
+
+// Splitting the word into discrete words to form the password
+		String[] sub=name.split(" ",2);
+		String word=sub[0];
+		//System.out.println(word);
+		
+// creating the password by concatenating the 1st name and the Roll Number
+		String pass=new String(word+rollNumber);
 		System.out.println(pass);
+		
 // calling the method that inserts a record in the table
-		if(obj.addStudentRecord(id1,name,pass))
+		if(obj.addStudent(rollNumber,name,pass,standard))
 		{
 			System.out.println("Student added successfully");
 			out.println("Student added successfully!!");
 %>
-			<meta http-equiv="refresh" content="3;url=http://localhost:9000/configureStudent.jsp">
+			<meta http-equiv="refresh" content="3;addStudent.html">
 <%
 		}
 		else

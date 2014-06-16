@@ -6,7 +6,7 @@
 </head>
  
 <body>
-<form id="viewPerformance" name="viewPerformance" method="post" action="viewPerformanceQuery.jsp">
+<form id="viewPerformance" name="viewPerformance" method="post" action="englishQueryPerformance.jsp">
 	<div class="nav">
 	<pre>
 	

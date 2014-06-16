@@ -1,0 +1,17 @@
+Required files are:
+
+java file: Server.java (babaQuery() uses the HashMap technique. Temporarily out of service)
+
+jsp files: englishQueryPerformance.jsp, viewPerformance.jsp, viewPerformanceQuery.jsp (HashMap code), teacherQuestionQuery.jsp,
+
+viewStudentQuery.jsp
+	 
+
+All html files.
+
+
+
+
+Files to be changed/manipulated
+
+1. For adding a new student record: addStudentQuery.jsp

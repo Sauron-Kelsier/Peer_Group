@@ -42,7 +42,7 @@
 			it.remove();
 		}
 		System.out.println(queryRecord);
-		obj.babaQuery(queryRecord,count);	
+		//obj.babaQuery(queryRecord,count);	
 	}
 	catch(NoSuchElementException e)
 	{
