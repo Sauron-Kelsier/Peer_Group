@@ -58,6 +58,33 @@ public class Server
 	}
 	
 	
+	
+	// method that inserts a new record in the teacher_login table
+	// Registers a new teacher
+	public int signupTeacher(String id,String name,String password) throws SQLException
+	{
+		Statement start=(Statement)databaseConnection.createStatement();
+        String query=new String("INSERT INTO teacher_login VALUES ('"+id+"','"+name+"','"+password+"')");
+        int res=start.executeUpdate(query);
+        
+        return res;
+	}
+	
+	
+	// method that lets teacher insert class and the subject that she teaches in that class
+	// teacher id, subject and standard and taken in as arguments and a query is made for execution
+	public int insertSubject(String id,String standard,String subject) throws SQLException
+	{
+		Statement start=(Statement)databaseConnection.createStatement();
+		String query=new String("INSERT INTO teacher_detail VALUES ('"+id+"','"+subject+"','"+standard+"')");
+		
+		int res=start.executeUpdate(query);
+		
+		return res;
+	}
+	
+	
+	
 	// This method is for the teacher, if she has to change the password when a student forgets his password after changing
 	// method that takes in the roll number, standard and new password to change the existing password after proper verification
 	// a query is fired that changes the password based on the roll number and standard provided
@@ -104,6 +131,9 @@ public class Server
 		
 	}
 	
+	
+	// method to view the student's information
+	// Depending on the whether roll number or standard or both are entered, a query is executed
 	public ResultSet viewStudent(String query) throws SQLException
 	{
 		Statement start=(Statement)databaseConnection.createStatement();
@@ -111,6 +141,7 @@ public class Server
 		
 		return res;
 	}
+	
 
 
 	// 

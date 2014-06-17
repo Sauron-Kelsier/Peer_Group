@@ -8,9 +8,15 @@
 	String password=new String(request.getParameter("password"));
 	String name=new String(request.getParameter("name"));
 	
-	
-	
-	
-
+	if(obj.signupTeacher(teacherID,name,password)==1)
+	{
+		out.println("Congrats!! Registered");
+	}
+	else
+	{
+		out.println("Sorry... Not registered!");
+	}
 
 %>
+
+<meta http-equiv="refresh" content="3;classAndSubject.html">
