@@ -42,8 +42,10 @@
 		else
 		{
 %>		
-			Sorry! Your credentials are incorrect!");
-			<meta http-equiv="refresh" content="2;login.html">
+<script>
+		alert("Sorry, wrong credentials! Please try again!!");
+</script>
+			<meta http-equiv="refresh" content="0;login.html">
 <%
 		}
 	}

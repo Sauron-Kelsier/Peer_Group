@@ -1,7 +1,14 @@
+<!-- 
+	
+	This file is totally complete. 
+
+ -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Learn Center | Admissions</title>
+<title>Homepage of the app along with an introduction</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
@@ -29,23 +36,23 @@
             <li><a href="performance.html">Performance</a></li>
             <li><a href="questions.html">Questions</a></li>
             <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="uploadFile.html">Upload File</a></li>
             <li class="end"><a href="contacts.html">Contacts</a></li>
           </ul>
         </nav>
-        <ul id="icons">
-		  
-          
-          <li><a href="login.html">Logout</a></li>
-		   
-        </ul>
+         <ul id="icons">
+		   <li><a href="login.html">Logout</a></li>	   
+         </ul>
       </div>
-      <div class="wrapper">
+     <div class="wrapper">
        <h1><a href="index.html" id="logo">Quiz It</a></h1>
-      </div>
+     </div>
       <div id="slogan">Quiz It<span>for knowledge</span> </div>
-    </header>
+   </header>
+   
     <!-- / header -->
-  </div>
+    
+ </div>
 </div>
 <div class="body2">
   <div class="main">
@@ -55,16 +62,16 @@
         <div class="wrapper">
           <article class="col1">
             <div class="pad_left1">
-              <h2 class="pad_bot1">About</h2>
+              <h2 class="pad_bot1">About the App</h2>
               <p class="pad_bot1 pad_top2"><strong>Group and Peer based evaluation</strong></p>
               Quiz IT  is an android app, where all kind of students can gain knowledge freely. This is a quizing platform which provides inter and intra group discussion features to students with the teacher acting as a mediator. The role of teacher is limited only to assigning group leaders and authenticating questions that would be asked during the session. Students of a particular group collectively decide on a question and the leader sends it to all other groups. When a student gets a question, he/she will select their option and submit the answer using their tablet. The Teacher will  keep a track of the students performance during this session.
-			  </div>
+		    </div>
             <div class="pad_left1">
               <h2 class="pad_bot1">For any query</h2>
             </div>
             <div class="wrapper">
               <figure class="left marg_right1"><img src="images/3.png" alt=""></figure>
-              <p class="pad_top2"><strong>Be free to ask any query.</strong>&nbsp;Contact us via facebook, linkedIn and Twitter</p>
+                <p class="pad_top2"><strong>Be free to ask any query.</strong>&nbsp;Contact us via facebook, linkedIn and Twitter</p>
             </div>
             <div class="wrapper pad_top2">
               <div class="pad_left1">
@@ -73,15 +80,15 @@
                     <div class="cols">
                       <ul class="list3">
 					 
-                       <a href="#"><img src="images/2.png"></a></br>
-					   <a href="#" class="button"><span><span>Users manual</span></span></a>
+                        <li><a href="#"><img src="images/2.png"></a></li>
+					    <a href="#" class="button"><span><span>Users manual</span></span></a>
 					   <!--<li> <a href="#"><img src="images/Mysql.jpg"></a><li>-->
 	
                       </ul>
                     </div>
                     <div class="cols pad_left2">            
                       <ul class="list3">
-                        <a href="#"><img src="images/1.png"></a></br>
+                        <li><a href="#"><img src="images/1.png"></a></li>
 						<a href="#" class="button marg_top1"><span><span>Product specification</span></span></a>
                         <!--<li><a href="#"><img src="images/ubuntu.jpg"></a></li>-->
                         
@@ -132,18 +139,18 @@
               <article class="col_2 pad_left2">
                 <h3>Developers:</h3>
                 <ul class="list2">
-                  <li><a href="#">Sukalyan</a></li>
-                  <li><a href="#">Vamshi</a></li>
-                  <li><a href="#">Rajat</a></li>
-                  <li><a href="#">Suman</a></li>
+                  <li>Sukalyan</li>
+                  <li>Vamshi</li>
+                  <li>Rajat</li>
+                  <li>Suman</li>
                 </ul>
               </article>
               <article class="col_3 pad_left2">
                 <h3>Mentors:</h3>
                 <ul class="list2">
-                  <li><a href="#">Nilesh (google) </a></li>
-                  <li><a href="#">Rahea sandalwala</a></li>
-                  <li><a href="#">Yougansh Sharma </a></li>
+                   <li>Nilesh Sir </li>
+                  <li>Rahea Madam</li>
+                  <li>Yougansh Sir</li>
                
                 </ul>
               </article>
@@ -158,5 +165,5 @@
   </div>
 </div>
 <script type="text/javascript">Cufon.now();</script>
-<div align=center>This is copyright of <a href="#">Quiz IT app</a></div></body>
+<div align=center>This is copyright of <a href="index.html">Quiz IT app</a></div></body>
 </html>

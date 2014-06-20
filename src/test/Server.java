@@ -61,13 +61,21 @@ public class Server
 	
 	// method that inserts a new record in the teacher_login table
 	// Registers a new teacher
-	public int signupTeacher(String id,String name,String password) throws SQLException
+	public int signupTeacher(String id,String name,String password) 
 	{
-		Statement start=(Statement)databaseConnection.createStatement();
-        String query=new String("INSERT INTO teacher_login VALUES ('"+id+"','"+name+"','"+password+"')");
-        int res=start.executeUpdate(query);
+		try
+		{
+			Statement start=(Statement)databaseConnection.createStatement();
+			String query=new String("INSERT INTO teacher_login VALUES ('"+id+"','"+name+"','"+password+"')");
+			int res=start.executeUpdate(query);
+			return res;
+		}
+		catch (SQLException e)
+		{
+			return 0;
+		}
         
-        return res;
+        
 	}
 	
 	
@@ -76,11 +84,18 @@ public class Server
 	public int insertSubject(String id,String standard,String subject) throws SQLException
 	{
 		Statement start=(Statement)databaseConnection.createStatement();
-		String query=new String("INSERT INTO teacher_detail VALUES ('"+id+"','"+subject+"','"+standard+"')");
-		
-		int res=start.executeUpdate(query);
-		
+		String verify=new String("SELECT * from teacher_login WHERE teacher_id like '"+id+"'");
+		String query = new String("INSERT INTO teacher_detail VALUES ('"+id+"','"+subject+"','"+standard+"')");
+		int res=0;
+		ResultSet resVerify=(ResultSet) start.executeQuery(verify);
+		if(resVerify.next())
+		{
+			res=start.executeUpdate(query);
+			return res;
+			
+		}
 		return res;
+		
 	}
 	
 	

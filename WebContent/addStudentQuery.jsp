@@ -44,18 +44,20 @@
 		System.out.println(pass);
 		
 // calling the method that inserts a record in the table
+// if insertion is successful, then 'true' is returned and 'Sucessful addition' message is printed
 		if(obj.addStudent(rollNumber,name,pass,standard))
 		{
-			System.out.println("Student added successfully");
-			out.println("Student added successfully!!");
-%>
-			<meta http-equiv="refresh" content="3;addStudent.html">
-<%
+			
+			out.println("Student added successfully!!");						// record has been added successfully
 		}
 		else
 		{
-			System.out.println("Alas!!");
+			out.println("Alas!! The student has not been added into the database!");			// record not inserted successfully
 		}
+%>
+		<meta http-equiv="refresh" content="3;addStudent.html">
+<%
+
 	}
 	catch(NumberFormatException e)
 	{

@@ -3,7 +3,6 @@ Required files are:
 java file: Server.java (babaQuery() uses the HashMap technique. Temporarily out of service)
 
 jsp files: englishQueryPerformance.jsp, viewPerformance.jsp, viewPerformanceQuery.jsp (HashMap code), teacherQuestionQuery.jsp,
-
 viewStudentQuery.jsp
 	 
 
@@ -15,3 +14,40 @@ All html files.
 Files to be changed/manipulated
 
 1. For adding a new student record: addStudentQuery.jsp
+
+
+HTML files
+
+addStudent.html  --> addStudentQuery.jsp (To insert a record)
+
+
+
+
+FOR TRANSMISSION OF PERFORMANCE AND QUESTIONS FROM SERVER TO CLIENT
+
+(Considering only the performance)
+
+Create a socket that will listen to any client and will take in the parameters the client sends for querying the database
+1. Create a class in the server side that contains all the fields of the performance.
+2. query the database and fetch the records
+3. Serialize the object that is populated by the result of the query
+4. send it to the client
+
+
+
+
+NOTES FOR THE FINAL SERVER UI (After discussion)
+
+1. Give pop up after a teacher registers in the server and also when she registers for a class/subject. Do not simply give a page and go forward
+
+4. Give logout button on each page after log in and not only in the home page.  
+
+
+2. Roll and subject. create a graph with the marks obtained and the x-axis is the number of quizzes.
+
+
+3. During the quiz, the teacher will get bar graphs for each question. 
+
+Multiple choice question: Like audience polls in KBC
+True and False: True and false and the number of students who have given true and who have given false
+One word answer: Number of students who have answered correctly and who have answered incorrectly

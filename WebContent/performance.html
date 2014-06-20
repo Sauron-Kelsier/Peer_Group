@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Learn Center | Programs</title>
+<title>Performance viewing interface</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
@@ -29,12 +29,13 @@
             <li><a href="performance.html">Performance</a></li>
             <li><a href="questions.html">Questions</a></li>
             <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="uploadFile.html">Upload File</a></li>
             <li class="end"><a href="contacts.html">Contacts</a></li>
           </ul>
         </nav>
-        <ul id="icons">
-          <li><a href="#"><img src="images/icons1.jpg" alt=""></a></li>
-          <li><a href="#"><img src="images/icons2.jpg" alt=""></a></li>
+         <ul id="icons">
+          <li><a href="index.html"><img src="images/icons2.jpg" alt=""></a></li>
+	  <li><a href="login.html">Logout</a></li>
         </ul>
       </div>
       <div class="wrapper">
@@ -54,47 +55,48 @@
           <article class="col1">
             <div class="pad_left1">
               <h2>enter details</h2>
+         
               <form id="ContactForm" action="englishQueryPerformance.jsp">
                <div>
 				   
-				     <div  class="wrapper"> <strong>Roll Number:</strong>
+				  <div  class="wrapper"> <strong>Roll Number:</strong>
                     <div class="bg">
                       <input type="text" class="input" name="rollNumber">
                     </div>
-                     </div>
-                  <div  class="wrapper"> <strong>Name:</strong>
-                    <div class="bg">
-                      <input type="text" class="input" name="name">
-                    </div>
-                    </div>										
-					 
-					 <div  class="wrapper"><label> <strong>Subject</strong></label>
-                    <div class="bg">
-                        <select name="subject">
-																<option value=""><----Select option----></option>
-																<option value="English">English</option>
-																<option value="Hindi">Hindi</option>
-																<option value="Maths">Maths</option>
-																<option value="Science">Science</option>
-																<option value="Computer">Computer</option>
-																<option value="GK">G.K.</option>		
-																</select>
-                    </div>
                   </div>
+               <div  class="wrapper"> <strong>Name:</strong>
+                 <div class="bg">
+                     <input type="text" class="input" name="name">
+                 </div>
+               </div>										
+					 
+			   <div  class="wrapper"><label> <strong>Subject</strong></label>
+                  <div class="bg">
+                      <select name="subject">
+							<option value="">----Select option----</option>
+							<option value="English">English</option>
+							<option value="Hindi">Hindi</option>
+							<option value="Maths">Maths</option>
+							<option value="Science">Science</option>
+							<option value="Computer">Computer</option>
+							<option value="GK">G.K.</option>		
+					 </select>
+                 </div>
+             </div>
                   
-                   <div  class="wrapper"><label> <strong>Standard</strong></label>
+                 <div  class="wrapper"><label> <strong>Standard</strong></label>
                     <div class="bg">
                         <select name="standard">
-																<option value=""><----Select option----></option>
-																<option value="6">6</option>
-																<option value="7">7</option>
-																<option value="8">8</option>
-																<option value="9">9</option>
-																<option value="10">10</option>
-																<option value="12">11</option>		
-																</select>
+							<option value="">----Select option----</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="12">11</option>		
+					    </select>
                     </div>
-                  </div>
+                </div>
                   
                  
                   
@@ -102,19 +104,17 @@
              
                   
                
-                  <div  class="wrapper"> <strong>Date:</strong>
-                  
+                <div  class="wrapper"> <strong>Date:</strong> </div>
+                <div  class="wrapper"> <strong>From:</strong>
+                   <div class="bg">
+                      <input type="date" class="input" placeholder="yyyy-mm-dd" name="fromDate" >
                    </div>
-                   <div  class="wrapper"> <strong>From:</strong>
-                    <div class="bg">
-                      <input type="date" class="input" name="fromDate" >
-                    </div>
-                     </div>
-                  <div  class="wrapper"> <strong>To:</strong>
-                    <div class="bg">
+                </div>
+                <div  class="wrapper"> <strong>To:</strong>
+                  <div class="bg">
                       <input type="date" class="input" name="toDate" >
-                    </div>
-                    </div>				
+                  </div>
+                </div>				
                 
                   
                 <span><span><input type="submit" class="button" value="Submit"></span></span></div>
@@ -125,7 +125,7 @@
 			  
             <div class="pad_left1">
               <h2>Miscellaneous <span>Info</span></h2>
-              <p>In normal classroom interaction there will be a teacher who monitors and organizes the activities. The teacher will divide the students into the groups and organizes the quizes to test their understanding of the material which was taught in the class. But, this organization of quizes to manage and to monitor each individual's performance in the class tends to be harder. To resolve this problem we are presenting a new solution of evaluating the students performance which will also provide a complete report of them automatically to the teacher.</p>
+              <p>The performance of students can be viewed according to the following parameters: Roll Number, Name, Subject, Standard, From Date and To Date. Based on the roll number or name, all the performances of a single student will be displayed. Similarly, if the the subject or standard is selected then, the records are filtered accordingly. The teacher can also retrieve records between dates using the 'From Date and To Date' fields                        </p>
             </div>
           </article>
         </div>
@@ -142,18 +142,18 @@
               <article class="col_2 pad_left2">
                 <h3>Developers:</h3>
                 <ul class="list2">
-                  <li><a href="#">Sukalyan</a></li>
-                  <li><a href="#">Vamshi</a></li>
-                  <li><a href="#">Rajat</a></li>
-                  <li><a href="#">Suman</a></li>
+                   <li>Sukalyan Bhakat</li>
+                  <li>Vamshi Reddy</li>
+                  <li>Rajat Goyal</li>
+                  <li>Suman Kumari</li>
                 </ul>
               </article>
               <article class="col_3 pad_left2">
                 <h3>Mentors:</h3>
                 <ul class="list2">
-                  <li><a href="#">Nilesh (google) </a></li>
-                  <li><a href="#">Rahea sandalwala</a></li>
-                  <li><a href="#">Yougansh Sharma </a></li>
+                  <li>Nilesh Sir </li>
+                  <li>Rahea Madam</li>
+                  <li>Yougansh Sir</li>
                
                 </ul>
               </article>
@@ -168,5 +168,5 @@
   </div>
 </div>
 <script type="text/javascript">Cufon.now();</script>
-<div align=center>This is copyright of <a href="#">Quiz IT app</a></div></body>
+<div align=center>This is copyright of <a href="performance.html">Quiz IT app</a></div></body>
 </html>

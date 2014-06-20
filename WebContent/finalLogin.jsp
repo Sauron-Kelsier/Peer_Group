@@ -1,0 +1,134 @@
+<!-- 
+
+	This file is totally complete. 
+
+ -->
+ 
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Login</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<script type="text/javascript" src="js/jquery-1.5.2.js" ></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/cufon-replace.js"></script>
+<script type="text/javascript" src="js/Molengo_400.font.js"></script>
+<script type="text/javascript" src="js/Expletus_Sans_400.font.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<style type="text/css">.bg, .box2{behavior:url("js/PIE.htc");}</style>
+<![endif]-->
+</head>
+<body id="page5">
+<div class="body1">
+  <div class="main">
+    <!-- header -->
+    <header>
+      <div class="wrapper">
+        <nav>
+          <ul id="menu">
+            <li><a href="signup.html">Sign up</a></li>
+            <li><a href="classAndSubject.html">Choose Subject</a></li>
+            
+          </ul>
+        </nav>
+        <ul id="icons">
+          <li><a href="#"><img src="images/icons1.jpg" alt=""></a></li>
+          <li><a href="#"><img src="images/icons2.jpg" alt=""></a></li>
+        </ul>
+      </div>
+      <div class="wrapper">
+        <h1><a href="index.html" id="logo">Quiz It</a></h1>
+      </div>
+      <div id="slogan">Quiz It<span>for knowledge</span> </div>
+    </header>
+    <!-- / header -->
+  </div>
+</div>
+<div class="body2">
+  <div class="main">
+    <!-- content -->
+    <section id="content">
+      <div class="box1">
+        <div class="wrapper">
+          <article class="col1">
+            <div class="pad_left1">
+              <h2>Login Here</h2>
+              <form id="ContactForm" action="loginQuery.jsp" method="post">
+                <div>
+                  <div  class="wrapper"> <strong>User id:</strong>
+                    <div class="bg">
+                      <input type="text" class="input" name="id">
+                    </div>
+                  </div>
+                  <div  class="wrapper"> <strong>Password:</strong>
+                    <div class="bg">
+                      <input type="password" class="input" name="password" >
+                    </div>
+                  </div>
+                  
+             <input type="submit" class="button" value="Submit" id="s1">
+                  
+
+             <a href="login.html" class="button"><span><span>Clear</span></span></a></div>
+              </form>
+            </div>
+          </article>
+          <article class="col2 pad_left2">
+            <div class="pad_left1">
+              <h2>Miscellaneous <span>Info</span></h2>
+              <p align="justify"> The login page is for the teacher login. All the teachers who want to use the application must register first. After registration, they will be able use their credentials to log in and use the server. This page enables a teacher to input his/her credentials and work on the server.</p>
+              
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- content -->
+    <!-- footer -->
+    <footer>
+      <div class="wrapper">
+        <div class="pad1">
+          <div class="pad_left1">
+            <div class="wrapper">
+             
+              <article class="col_2 pad_left2">
+                <h3>Developers:</h3>
+                <ul class="list2">
+                  <li>Sukalyan</li>
+                  <li>Vamshi</li>
+                  <li>Rajat</li>
+                  <li>Suman</li>
+                </ul>
+              </article>
+              <article class="col_3 pad_left2">
+                <h3>Mentors:</h3>
+                <ul class="list2">
+                   <li>Nilesh Sir </li>
+                  <li>Rahea Madam</li>
+                  <li>Yougansh Sir</li>
+               
+                </ul>
+              </article>
+            
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- / footer -->
+  </div>
+</div>
+<script type="text/javascript">Cufon.now();</script>
+<div align=center>This is copyright of <a href="login.html">Quiz IT app</a></div></body>
+</html>

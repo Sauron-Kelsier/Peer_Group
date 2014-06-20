@@ -1,0 +1,36 @@
+Files that are important:
+
+
+( I have mentioned pairs. The .html file denotes the front end and the .jsp file its corresponding backend. This might help you to sort out the important files)
+
+Just look into how to add bar graphs in html. 
+
+
+addStudent.html, addStudentQuery.jsp
+classAndSubject.html, classAndSubjectQuery.jsp
+contacts.html
+performance.html, englishQueryPerformance.jsp
+index.html
+login.html, loginQuery.jsp
+modifyStudent.html, modifyStudent.jsp
+questions.html, teacherQuestionQuery.jsp
+quiz.html
+signup.html, signUpQuery.jsp
+students.html
+teacherPerformanceView.html
+uploadFile.html
+viewStudent.html, viewStudentQuery.jsp
+
+
+
+Requirements of Raeha ma'am (There were 2 more, but I have already taken care of them. Just look into these 2)
+
+
+1. Roll and subject. create a graph with the marks obtained and the x-axis is the number of quizzes.
+
+
+2. During the quiz, the teacher will get bar graphs for each question. 
+
+Multiple choice question: Like audience polls in KBC
+True and False: True and false and the number of students who have given true and who have given false
+One word answer: Number of students who have answered correctly and who have answered incorrectly

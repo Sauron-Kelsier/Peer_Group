@@ -8,15 +8,40 @@
 	String password=new String(request.getParameter("password"));
 	String name=new String(request.getParameter("name"));
 	
+	
 	if(obj.signupTeacher(teacherID,name,password)==1)
 	{
-		out.println("Congrats!! Registered");
+%>
+
+<script>
+	var decision=confirm("Register for a class and subject");
+	if(decision==true)
+		{
+</script>
+			<meta http-equiv="refresh" content="0;classAndSubject.html">
+<script>
+		}
+	else
+		{
+</script>
+			<meta http-equiv="refresh" content="0;login.html">
+<script>
+		}
+
+</script>
+<%
 	}
 	else
 	{
-		out.println("Sorry... Not registered!");
+%>
+<script>
+	alert("Sorry!! The registration is unsuccessful. Please try again");
+	
+</script>
+	<meta http-equiv="refresh" content="0;signup.html">
+<%
 	}
 
 %>
 
-<meta http-equiv="refresh" content="3;classAndSubject.html">
+
