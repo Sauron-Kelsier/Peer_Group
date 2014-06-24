@@ -4,15 +4,24 @@
  */
 package myServer;
 
+import com.mysql.jdbc.Connection;
+
 /**
  *
  * @author sukalyan14
  */
 public class TeacherOption extends javax.swing.JFrame {
+    
+    Connection databaseConnection;
 
     /**
      * Creates new form TeacherOption
      */
+    public TeacherOption(Connection db) {
+        initComponents();
+        databaseConnection=db;
+    }
+
     public TeacherOption() {
         initComponents();
     }
@@ -32,13 +41,23 @@ public class TeacherOption extends javax.swing.JFrame {
         uploadDocument = new javax.swing.JButton();
         quizButton = new javax.swing.JButton();
         viewQuestion = new javax.swing.JButton();
-        exitButton = new javax.swing.JButton();
+        logoutButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         viewPerformance.setText("View performance of students");
+        viewPerformance.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewPerformanceActionPerformed(evt);
+            }
+        });
 
         studentConfiguration.setText("Configure student details");
+        studentConfiguration.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentConfigurationActionPerformed(evt);
+            }
+        });
 
         uploadDocument.setText("Upload a document");
 
@@ -50,6 +69,11 @@ public class TeacherOption extends javax.swing.JFrame {
         });
 
         viewQuestion.setText("View questions");
+        viewQuestion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewQuestionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -84,10 +108,10 @@ public class TeacherOption extends javax.swing.JFrame {
                 .addContainerGap(43, Short.MAX_VALUE))
         );
 
-        exitButton.setText("Exit");
-        exitButton.addActionListener(new java.awt.event.ActionListener() {
+        logoutButton.setText("Logout");
+        logoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitButtonActionPerformed(evt);
+                logoutButtonActionPerformed(evt);
             }
         });
 
@@ -98,7 +122,7 @@ public class TeacherOption extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(83, 83, 83))
         );
         layout.setVerticalGroup(
@@ -106,26 +130,60 @@ public class TeacherOption extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
-                .addComponent(exitButton)
+                .addComponent(logoutButton)
                 .addGap(0, 205, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
+    private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
         // TODO add your handling code here:
+        Login obj=new Login();                // going back to the login page
+        obj.setVisible(true);
+        this.setVisible(false);
         
-        Login.end();
-    }//GEN-LAST:event_exitButtonActionPerformed
+        //Login.endLogin();
+    }//GEN-LAST:event_logoutButtonActionPerformed
 
     private void quizButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_quizButtonActionPerformed
 
+    private void studentConfigurationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentConfigurationActionPerformed
+        // TODO add your handling code here:
+        ConfigureStudent obj=new ConfigureStudent(databaseConnection);
+        obj.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_studentConfigurationActionPerformed
+
+    private void viewPerformanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPerformanceActionPerformed
+        // TODO add your handling code here:
+        
+        ViewOnePerformance obj=new ViewOnePerformance(databaseConnection);
+        this.setVisible(false);
+        obj.setVisible(true);
+        
+    }//GEN-LAST:event_viewPerformanceActionPerformed
+
+    private void viewQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewQuestionActionPerformed
+        // TODO add your handlig code here:
+        
+        viewQuestions obj=new viewQuestions(databaseConnection);
+        this.setVisible(false);
+        obj.setVisible(true);
+    }//GEN-LAST:event_viewQuestionActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
+    
+    static void endTeacherOption()
+    {
+        System.exit(0);         // exiting the Teacher option interface
+       
+    }
     public static void main(String args[]) {
         /*
          * Set the Nimbus look and feel
@@ -165,8 +223,8 @@ public class TeacherOption extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton exitButton;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton logoutButton;
     private javax.swing.JButton quizButton;
     private javax.swing.JButton studentConfiguration;
     private javax.swing.JButton uploadDocument;

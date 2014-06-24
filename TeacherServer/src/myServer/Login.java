@@ -4,17 +4,47 @@
  */
 package myServer;
 
+import com.sun.org.apache.xalan.internal.xsltc.compiler.util.ErrorMessages;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import com.mysql.jdbc.Connection;
+
 /**
  *
  * @author sukalyan14
  */
 public class Login extends javax.swing.JFrame {
+    
+    Connection databaseConnection;
+
 
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
+        try                 // connecting to the mysql database
+        {
+		Class.forName("com.mysql.jdbc.Driver");
+                    
+                Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/peer01","root","database");
+                //JOptionPane.showMessageDialog(this,"Please fill in your credentials");
+                databaseConnection=con;
+
+
+        }
+        catch (SQLException e) 
+        {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+        } 
+        catch (ClassNotFoundException e) 
+        {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
     }
 
     /**
@@ -35,7 +65,6 @@ public class Login extends javax.swing.JFrame {
         passwordField = new javax.swing.JTextField();
         submitButton = new javax.swing.JButton();
         clearButton = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         exitButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,10 +78,10 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(228, 228, 228)
                 .addComponent(headingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(116, 116, 116))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,13 +131,14 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(passwordLabel)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(111, Short.MAX_VALUE))
+                                .addGap(65, 65, 65)
+                                .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(1, 1, 1)))))
+                .addContainerGap(337, Short.MAX_VALUE))
         );
 
         jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {passwordLabel, userNameLabel});
@@ -128,14 +158,12 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(passwordLabel)
                     .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(submitButton)
                     .addComponent(clearButton))
-                .addContainerGap())
+                .addGap(24, 24, 24))
         );
-
-        jLabel4.setText("jLabel4");
 
         exitButton.setText("Exit");
         exitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -154,9 +182,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(196, 196, 196)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
         );
@@ -165,11 +191,9 @@ public class Login extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(exitButton))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(exitButton)
                 .addGap(33, 33, 33))
         );
 
@@ -180,6 +204,11 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordFieldActionPerformed
 
+    private void clearField()   // clears the text fields
+    {
+        this.userNameField.setText("");
+        this.passwordField.setText("");
+    }
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
         
@@ -187,36 +216,78 @@ public class Login extends javax.swing.JFrame {
         String u,p;                            // checking the username and password
         u=userNameField.getText();
         p=passwordField.getText();
-        if(u.equals(p))
-        {
-            jLabel4.setVisible(false);
-            TeacherOption obj=new TeacherOption();
-            this.setVisible(false);
-            obj.setVisible(true);
+        
+        // username and password should be filled
+        if((!p.isEmpty() && !u.isEmpty()))
+        {   
+            try
+            {
+                String id=new String(userNameField.getText());
+                String pass=new String(passwordField.getText());
+                System.out.println(id);
+                System.out.println(pass);
+                Statement start=(Statement)databaseConnection.createStatement();
+                String query=new String("SELECT * FROM teacher_login WHERE teacher_id like '"+id+"' AND password like '"+pass+"'");
+
+                ResultSet res=start.executeQuery(query);
+                
+                // If the teacher logs in, he/she gets her possible options
+                if(res.next())
+                {
+                    TeacherOption obj=new TeacherOption(databaseConnection);
+                    this.setVisible(false);
+                    obj.setVisible(true);
+                }
+                
+                // if the credentials do not match, then the teacher is asked to enter the details again
+                else
+                {
+                    JOptionPane.showMessageDialog(this,"Please fill in your credentials properly");
+                    clearField();
+                }
+                // JOptionPane.showMessageDialog(this,"Hello");
+            } 
+            catch (SQLException e) 
+            {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+            }
+            catch (NumberFormatException e)
+            {
+                JOptionPane.showMessageDialog(this,"User name is a number");
+                clearField();
+            }
         }
+       
         else
         {
-            jLabel4.setVisible(true);
+            JOptionPane.showMessageDialog(this,"Please fill in your credentials");
+            clearField();
         }
+        
+       
+            
+        
+        
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
         // TODO add your handling code here:
         
-        userNameField.setText(""); 
-        passwordField.setText("");               // clearing the fields
+        clearField();
     }//GEN-LAST:event_clearButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         // TODO add your handling code here:
         System.exit(0);                         // exiting the interface
     }//GEN-LAST:event_exitButtonActionPerformed
-
+    
+    
     /**
      * @param args the command line arguments
      */
     
-    static void end()               // to exit from this class
+    static void endLogin()               // to exit from this class
     {
         System.exit(0);
     }
@@ -262,7 +333,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton clearButton;
     private javax.swing.JButton exitButton;
     private javax.swing.JLabel headingLabel;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField passwordField;
