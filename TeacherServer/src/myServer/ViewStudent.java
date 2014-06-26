@@ -225,7 +225,7 @@ public class ViewStudent extends javax.swing.JFrame {
         String name=new String(nameField.getText());
         String standard=new String(standardField.getSelectedItem().toString());
         
-        String query=new String("SELECT * FROM student_performance WHERE ");
+        String query=new String("SELECT * FROM student_info WHERE ");
 
         if(!rollNumber.equals(""))
         {
@@ -255,6 +255,7 @@ public class ViewStudent extends javax.swing.JFrame {
             query=query.concat("standard LIKE '"+standard+"' ");
             flag=1;
         }
+        System.out.println(query);
         
         ResultSet res;
         try 

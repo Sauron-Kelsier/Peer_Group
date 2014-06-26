@@ -69,7 +69,7 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(32, 124, 124), new java.awt.Color(225, 222, 135)));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(0, new java.awt.Color(32, 124, 124), new java.awt.Color(225, 222, 135)));
 
         headingLabel.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         headingLabel.setText("Teacher Login");
@@ -92,7 +92,7 @@ public class Login extends javax.swing.JFrame {
         );
 
         userNameLabel.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        userNameLabel.setText("User Name: ");
+        userNameLabel.setText("Teacher ID:");
 
         passwordLabel.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         passwordLabel.setText("Password: ");
@@ -138,7 +138,7 @@ public class Login extends javax.swing.JFrame {
                                 .addGap(65, 65, 65)
                                 .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(1, 1, 1)))))
-                .addContainerGap(337, Short.MAX_VALUE))
+                .addContainerGap(342, Short.MAX_VALUE))
         );
 
         jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {passwordLabel, userNameLabel});

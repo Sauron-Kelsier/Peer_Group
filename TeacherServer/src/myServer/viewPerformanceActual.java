@@ -20,6 +20,8 @@ import javax.swing.table.TableColumnModel;
  * @author sukalyan14
  */
 public class viewPerformanceActual extends javax.swing.JFrame {
+    
+    JTable table;
 
     /**
      * Creates new form viewPerformanceActual
@@ -46,36 +48,66 @@ public class viewPerformanceActual extends javax.swing.JFrame {
 
     void displayRecord(DefaultTableModel model,ResultSet row) throws SQLException
     {
+        
         ResultSetMetaData meta= (ResultSetMetaData) row.getMetaData();
         if(model==null) 
         {
-            setMinimumSize(new Dimension(640, 480));
+            //setMinimumSize(new Dimension(640, 480));
             model= new DefaultTableModel();
-            jTable1.setPreferredSize(new Dimension(500, 500));
+            //jTable1.setPreferredSize(new Dimension(500, 500));
             //model.getColumn(1).setWidth(36);
             
         }
         // creating the table headers
         String cols[]=new String[meta.getColumnCount()];
+
         for(int i=0;i< cols.length;++i)
         {
             cols[i]= meta.getColumnLabel(i+1);
+            System.out.println(cols[i]);
+            //System.out.println(row.getMetaData().getColumnName(i));
             
         }
-
+        
+        
         model.setColumnIdentifiers(cols);
         
-        //model.getColumn(1).setWidth(36);
-
+        
+        /*for(int i=0;i<table.getColumnCount();i++)   // added
+        {   
+            col=table.getColumnModel().getColumn(i);
+            col.setPreferredWidth(100);
+            col.setMaxWidth(500);
+        }*/
+        
+        int r=0;              // added 
         while(row.next())
         {
+            
             Object data[]= new Object[cols.length];
             for(int i=0;i< data.length;++i)
             {
+                
+                
                 data[i]=row.getObject(i+1);
+               // table.setValueAt(data[i],r, i);   // added
             }
-        model.addRow(data);
+            model.addRow(data);
+            r++;
         }
+       /* //table.setVisible(true);               // added
+        table.setModel(model);      // added
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        //TableColumn col;            // added
+        table.getColumnModel().getColumn(0).setPreferredWidth(360);
+        table.getColumnModel().getColumn(1).setPreferredWidth(360);
+        table.getColumnModel().getColumn(2).setPreferredWidth(360);
+        table.getColumnModel().getColumn(3).setPreferredWidth(360);
+        table.getColumnModel().getColumn(4).setPreferredWidth(360);
+        table.getColumnModel().getColumn(5).setPreferredWidth(360);
+        table.getColumnModel().getColumn(6).setPreferredWidth(360);
+        table.getColumnModel().getColumn(7).setPreferredWidth(360);*/
+        
     JOptionPane.showMessageDialog(null,new JScrollPane(new JTable(model)));
 }
     /**

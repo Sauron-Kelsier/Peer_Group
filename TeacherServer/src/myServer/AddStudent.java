@@ -234,7 +234,12 @@ public class AddStudent extends javax.swing.JFrame {
                         System.out.println("Insertion has failed");
                     }
                     else
-                        System.out.println("Insertion is successful");
+                    {
+                        JOptionPane.showMessageDialog(this,"Insertion is successful!!");
+                        ConfigureStudent obj=new ConfigureStudent(databaseConnection);
+                        this.setVisible(false);
+                        obj.setVisible(true);
+                    }
                 }
                 catch(MySQLIntegrityConstraintViolationException e)
                 {
