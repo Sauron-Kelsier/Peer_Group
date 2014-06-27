@@ -119,7 +119,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="337" max="32767" attributes="0"/>
+                  <EmptySpace pref="342" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -152,7 +152,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Ubuntu" size="15" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="User Name: "/>
+            <Property name="text" type="java.lang.String" value="Teacher ID:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="passwordLabel">

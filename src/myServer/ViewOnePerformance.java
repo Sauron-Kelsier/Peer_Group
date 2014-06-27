@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -297,7 +297,7 @@ public class ViewOnePerformance extends javax.swing.JFrame {
             
             // fetching the value of the selected item. Returned in the form of an object
             // So, converted into string in order to store in a variable
-            int flag=0;
+            int flag=0,signal=0;
             
             String rollNumber=new String(rollNumberField.getText());
             String name=new String(nameField.getText());
@@ -317,6 +317,7 @@ public class ViewOnePerformance extends javax.swing.JFrame {
             {
                 query=query.concat(" roll_number LIKE '"+rollNumber+"'");
                 flag=1;
+                signal=1;
             }
             
             // Checking if 'name' field is filled by the user
@@ -325,9 +326,12 @@ public class ViewOnePerformance extends javax.swing.JFrame {
                 if(flag==1)
                 {
                     query=query.concat(" AND");
+                    signal=0;
+                    
                 }
                 query=query.concat(" NAME LIKE '"+name+"'");
                 flag=1;
+                signal=1;
 
             }
             
@@ -341,6 +345,7 @@ public class ViewOnePerformance extends javax.swing.JFrame {
                 }
                 query=query.concat(" subject LIKE '"+subject+"'");
                 flag=1;
+                
             }
             
             
@@ -354,6 +359,7 @@ public class ViewOnePerformance extends javax.swing.JFrame {
                 }
                 query=query.concat(" standard LIKE '"+standard+"'");
                 flag=1;
+                signal++;
             }
             
             
@@ -392,27 +398,47 @@ public class ViewOnePerformance extends javax.swing.JFrame {
             
             // if no field has been entered by the teacher
 
-    
             
-            ResultSet res;
-            try 
+            // if signal=1, then only the roll number or the name or both have been inserted by the teacher for viewing the performace
+            // if signal=2, then both standard and the above condition is satisfied and the method for drawing the bar graph will be called
+            
+            
+            if(signal==2)
             {
-                Statement start=(Statement) databaseConnection.createStatement();
-                res = (ResultSet)start.executeQuery(query);
-                viewPerformanceActual obj=new viewPerformanceActual();
-                obj.displayRecord(null, res);
-                if(res.next())
+                try 
                 {
-                    System.out.println("Yes!!");                
+                    // calling the method for drawing, saving and finally displaying the bar graph
+                    JavaChartDemo obj=new JavaChartDemo();
+                    obj.draw(rollNumber,standard,subject,databaseConnection);
                 }
-                else
+                catch (SQLException ex) 
                 {
-                    System.out.println("No!!");
+                    JOptionPane.showMessageDialog(this,"Please try again!!");
                 }
+
             }
-            catch (SQLException ex) 
+            else
             {
-                JOptionPane.showMessageDialog(this,"Please enter atleast 1 field");
+                ResultSet res;
+                try 
+                {
+                    Statement start=(Statement) databaseConnection.createStatement();
+                    res = (ResultSet)start.executeQuery(query);
+                    viewPerformanceActual obj=new viewPerformanceActual();
+                    obj.displayRecord(null, res);
+                    if(res.next())
+                    {
+                        System.out.println("Yes!!");                
+                    }
+                    else
+                    {
+                        System.out.println("No!!");
+                    }
+                }
+                catch (SQLException ex) 
+                {
+                    JOptionPane.showMessageDialog(this,"Please enter atleast 2 field");
+                }
             }
         
     }//GEN-LAST:event_findButtonActionPerformed
